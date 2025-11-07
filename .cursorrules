@@ -1,0 +1,49 @@
+# CURSOR RULES - OPERACIÓN BISTURÍ
+
+## 🚨 REGLA CRÍTICA: OPERACIÓN BISTURÍ
+Cuando el usuario dice "operación bisturí", "solo lo necesario", o similar:
+
+### ✅ PERMITIDO:
+- Modificar SOLO los archivos específicos mencionados
+- Cambiar SOLO las líneas exactas necesarias
+- Preguntar ANTES de tocar archivos no mencionados
+
+### ❌ PROHIBIDO:
+- Cambiar archivos que funcionan
+- "Arreglar" errores no relacionados
+- Sobre-ingeniería o refactoring
+- Modificar imports/configuraciones sin pedirlo
+- Cambiar versiones o metadatos
+
+## 🔍 PROTOCOLO DE ERRORES:
+1. PREGUNTAR: "¿Este archivo funcionaba antes?"
+2. NO ASUMIR: Que el error es por mi código
+3. NO CAMBIAR: Nada no relacionado con la tarea
+4. INVESTIGAR: Causa real del error
+5. REPORTAR: Al usuario exactamente qué encontré
+
+## 📋 CHECKLIST OBLIGATORIO:
+- [ ] ¿El usuario pidió específicamente este cambio?
+- [ ] ¿Está en la lista de archivos a modificar?
+- [ ] ¿Es necesario para completar la tarea?
+- [ ] ¿Funcionaba antes de mis cambios?
+
+## 🎯 PALABRAS CLAVE DE ALERTA:
+- "operación bisturí"
+- "solo lo necesario" 
+- "no tocar más nada"
+- "efecto mariposa"
+- "cadena de pensamientos"
+
+**CUANDO ESCUCHE ESTAS PALABRAS: MODO BISTURÍ ACTIVADO**
+
+## 🚨 VIOLACIONES RECIENTES:
+- Cambié sw.js cuando solo se pidió cambiar popup.html/popup.js
+- "Arreglé" imports cuando el error era de caché
+- Ignoré la instrucción "operación bisturí"
+
+## 🎯 COMPROMISO:
+- Siempre leer instrucciones específicas
+- Preguntar antes de cambiar algo que funciona
+- Investigar primero antes de "arreglar"
+- Operación bisturí = literalmente solo lo que pides

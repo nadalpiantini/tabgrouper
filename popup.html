@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tab Grouper</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="header">
+    <img src="assets/empleaido-icon.png" alt="Empleaido - Tab Grouper" class="logo" />
+    <h2>Tab Grouper</h2>
+  </div>
+
+  <div class="mode-selector">
+    <label><input type="radio" name="mode" value="domain" checked /> Group by Domain</label>
+    <label><input type="radio" name="mode" value="category" /> Group by Category</label>
+  </div>
+
+  <div class="options">
+    <label><input type="checkbox" id="ignorePinned" checked /> Ignore pinned tabs</label>
+  </div>
+
+  <div class="button-wrapper">
+    <button id="groupThisWindowBtn" class="primary-button">Group This Window</button>
+    <button id="groupAllWindowsBtn" class="primary-button">Group All Windows</button>
+    <button id="ungroupBtn" class="secondary-button">Ungroup All</button>
+    <button id="undoBtn" class="secondary-button">Undo</button>
+  </div>
+
+  <div class="window-operations">
+    <h3>🪟 Window Operations</h3>
+    <button id="mergeWindowsBtn" class="window-btn">🔗 Merge All Windows</button>
+    <button id="groupsToWindowsBtn" class="window-btn">🪟 Groups → Windows</button>
+  </div>
+
+  <div class="window-layouts">
+    <h3>📐 Window Layouts</h3>
+
+    <div id="deskdriverStatus" class="deskdriver-status" style="display: none;">
+      <span class="status-dot"></span>
+      <span class="status-text">DeskDriver Connected</span>
+    </div>
+
+    <div class="layout-section">
+      <div class="section-label">Quick Layouts</div>
+      <div class="layout-grid">
+        <button class="layout-btn" data-layout="dual_vertical">
+          <span class="layout-icon">⬌</span>
+          <span>Dual V</span>
+        </button>
+        <button class="layout-btn" data-layout="dual_horizontal">
+          <span class="layout-icon">⬍</span>
+          <span>Dual H</span>
+        </button>
+        <button class="layout-btn" data-layout="triple_columns">
+          <span class="layout-icon">⚏</span>
+          <span>Triple</span>
+        </button>
+        <button class="layout-btn" data-layout="quad">
+          <span class="layout-icon">⊞</span>
+          <span>Quad</span>
+        </button>
+        <button class="layout-btn" data-layout="focus">
+          <span class="layout-icon">◉</span>
+          <span>Focus</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="deskdriverProfiles" class="layout-section" style="display: none;">
+      <div class="section-label">DeskDriver Profiles</div>
+      <div id="deskdriverProfilesList" class="profiles-list"></div>
+    </div>
+
+    <div class="layout-section">
+      <div class="section-label">Saved Layouts</div>
+      <div id="savedLayoutsList" class="saved-layouts-list">
+        <div class="empty-state">No saved layouts</div>
+      </div>
+      <button id="saveLayoutBtn" class="action-btn-small">💾 Save Current</button>
+    </div>
+  </div>
+
+  <div class="shortcuts">
+    <p><kbd>Ctrl/Cmd+Shift+G</kbd> Group</p>
+    <p><kbd>Ctrl/Cmd+Shift+U</kbd> Ungroup</p>
+    <p><kbd>Ctrl/Cmd+Shift+C</kbd> Collapse</p>
+  </div>
+
+  <div class="footer">
+    <small>Made with 🧠 by <a href="https://empleaido.com" target="_blank">Empleaido</a></small>
+  </div>
+
+  <div style="margin-top:8px;border-top:1px solid #333;padding-top:6px;text-align:center">
+    <small style="font-size:10px;color:#888">Professional documentation — <strong style="color:#eee">Made with 🧠 by Empleaido</strong> — Smart tools that scale</small>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Grouper — Empleaido",
+  "short_name": "Tab Grouper",
+  "description": "Smart tab organization: Intelligent rules, multi-window workspaces, visual management. Made with 🧠 by Empleaido.",
+  "version": "1.6.3",
+  "version_name": "1.6.3 (Force Update)",
+  "homepage_url": "https://empleaido.com",
+  "minimum_chrome_version": "114",
+  "permissions": ["tabs", "tabGroups", "storage", "sidePanel", "system.display"],
+  "optional_host_permissions": ["http://localhost:8546/*"],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "🧠 Tab Grouper"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "options_page": "about.html",
+  "background": {
+    "service_worker": "sw.js",
+    "type": "module"
+  },
+  "commands": {
+    "group-tabs": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+G",
+        "mac": "Command+Shift+G"
+      },
+      "description": "Group tabs"
+    },
+    "ungroup-tabs": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+U",
+        "mac": "Command+Shift+U"
+      },
+      "description": "Ungroup current window tabs"
+    },
+    "collapse-groups": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+C",
+        "mac": "Command+Shift+C"
+      },
+      "description": "Collapse all groups"
+    },
+    "smart-merge": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+M",
+        "mac": "Command+Shift+M"
+      },
+      "description": "Smart merge (rules engine)"
+    }
+  }
+}

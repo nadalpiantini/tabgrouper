@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <title>Tab Grouper • Panel</title>
+</head>
+<body class="panel">
+  <header>
+    <h1>Tab Grouper</h1>
+    <small>by Empleaido</small>
+  </header>
+
+  <section id="groups"></section>
+
+  <footer>
+    <button id="collapse" class="panel-btn">Collapse All</button>
+    <button id="expand" class="panel-btn">Expand All</button>
+    <button id="refresh" class="panel-btn">Refresh</button>
+
+    <hr>
+    <h3>💾 Workspaces Pro</h3>
+    <input id="ws-name" placeholder="Workspace name" class="ws-input">
+    <input id="ws-tags" placeholder="Tags (comma separated)" class="ws-input">
+    <textarea id="ws-notes" rows="2" placeholder="Notes (optional)" class="ws-textarea"></textarea>
+    
+    <div class="row">
+      <label class="sr-toggle">
+        <input type="checkbox" id="ws-include-pinned">
+        <span>Include pinned tabs</span>
+      </label>
+      <label class="sr-toggle">
+        <input type="checkbox" id="ws-include-meta" checked>
+        <span>Include titles/favicons</span>
+      </label>
+    </div>
+
+    <div class="row">
+      <button id="ws-capture" class="action-btn">💾 Save (multi-window)</button>
+      <button id="ws-rename" class="action-btn-sm">✏️ Rename</button>
+      <button id="ws-duplicate" class="action-btn-sm">🧬 Duplicate</button>
+      <button id="ws-delete" class="action-btn-danger">🗑️ Delete</button>
+    </div>
+
+    <div class="row">
+      <label class="sr-label">Restore mode:
+        <select id="ws-restore-mode" class="sr-select">
+          <option value="MERGE_CURRENT">Merge in current window</option>
+          <option value="NEW_WINDOW">Recreate in new windows</option>
+          <option value="REPLACE_CURRENT">Replace current window</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <select id="ws-list" class="ws-select"></select>
+      <button id="ws-restore" class="action-btn">♻️ Restore</button>
+      <button id="ws-refresh-list" class="action-btn-sm">🔄</button>
+    </div>
+
+    <details class="ws-preview-details">
+      <summary>📊 Preview selected</summary>
+      <pre id="ws-preview" class="ws-preview-pre"></pre>
+    </details>
+
+    <hr>
+    <h3>⏺ Autosaves (local)</h3>
+    <div class="row">
+      <label class="sr-toggle">
+        <input type="checkbox" id="ws-autosave" checked>
+        <span>Enable autosave</span>
+      </label>
+      <input id="ws-autosave-max" type="number" min="1" max="50" value="10" class="ws-num-input">
+      <button id="ws-autosave-now" class="action-btn-sm">⏺ Save now</button>
+    </div>
+    <div class="row">
+      <select id="ws-autosaves" class="ws-select"></select>
+      <button id="ws-restore-autosave" class="action-btn">↩️ Restore</button>
+    </div>
+
+    <hr>
+    <h3>⚡ Smart Rules</h3>
+    <div class="row">
+      <label class="sr-toggle">
+        <input type="checkbox" id="sr-normalize" checked>
+        <span>Merge subdomains</span>
+      </label>
+    </div>
+    <div class="row">
+      <label class="sr-label">Preset:
+        <select id="sr-preset" class="sr-select"></select>
+      </label>
+      <button id="sr-edit-white" class="action-btn-sm">Whitelist</button>
+    </div>
+    <div class="row">
+      <label class="sr-toggle">
+        <input type="checkbox" id="sr-autocollapse" checked>
+        <span>Auto-collapse after merge</span>
+      </label>
+    </div>
+    <div class="row">
+      <button id="sr-apply" class="smart-merge-btn">⚡ Smart-Merge</button>
+    </div>
+
+    <hr>
+    <h3>📦 Templates</h3>
+    <div class="row">
+      <select id="tpl-select" class="tpl-select">
+        <option>Docs</option>
+        <option>AI</option>
+        <option>Code</option>
+        <option>Social</option>
+        <option>Empleaido</option>
+      </select>
+      <button id="tpl-load" class="action-btn">📦 Load</button>
+    </div>
+
+    <hr>
+    <h3>⬇️⬆️ Export / Import</h3>
+    <div class="row">
+      <label class="meta-toggle">
+        <input type="checkbox" id="ws-include-meta" checked>
+        <span>Save titles/favicons (rich)</span>
+      </label>
+    </div>
+    <div class="row">
+      <button id="export-selected" class="action-btn-sm">⬇️ Export selected</button>
+      <button id="export-all" class="action-btn-sm">📦 Export all</button>
+    </div>
+    <div class="row">
+      <button id="export-current" class="action-btn-sm">🪄 Export snapshot</button>
+      <input type="file" id="import-file" accept="application/json" hidden>
+      <button id="import-btn" class="action-btn-sm">⬆️ Import JSON</button>
+    </div>
+    <small id="io-status" aria-live="polite" class="status-msg"></small>
+  </footer>
+
+  <footer class="brand-footer">
+    <small>
+      Professional documentation<br>
+      <strong>Made with 🧠 by Empleaido</strong> — Smart tools that scale
+    </small>
+  </footer>
+
+  <script type="module" src="sidepanel.js"></script>
+</body>
+</html>
